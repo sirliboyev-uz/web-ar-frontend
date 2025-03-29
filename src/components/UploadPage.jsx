@@ -20,12 +20,12 @@ const UploadPage = () => {
     formData.append('video', videoFile);
 
     try {
-      const res = await axios.post('http://localhost:8000/upload', formData, {
+      const res = await axios.post('https://web-ar-backend.onrender.com/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-      const fullUrl = `http://localhost:8000${res.data.ar_url}`;
+      const fullUrl = `https://web-ar-backend.onrender.com${res.data.ar_url}`;
       setQrUrl(fullUrl);
     } catch (err) {
       console.error(err);
